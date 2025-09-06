@@ -1,6 +1,6 @@
 name: GitHub Snake Game
 
-#
+
 
 on:
 
@@ -8,8 +8,7 @@ on:
 
   schedule:
 
-    
-cron: "0 0 * * *",
+    - cron: "0 0 * * *"
 
 
 
@@ -25,8 +24,7 @@ cron: "0 0 * * *",
 
     branches:
 
-      
-main,
+      - main
 
 
 
@@ -44,8 +42,7 @@ jobs:
 
       # Step 1: Checkout the repository
 
-      
-name: Checkout Repository,
+      - name: Checkout Repository
 
         uses: actions/checkout@v3
 
@@ -53,14 +50,13 @@ name: Checkout Repository,
 
       # Step 2: Generate the snake animations
 
-      
-name: Generate GitHub Contributions Snake Animations,
+      - name: Generate GitHub Contributions Snake Animations
 
         uses: Platane/snk@v3
 
         with:
 
-          # GitHub usename to generate the animation for
+          # GitHub username to generate the animation for
 
           github_user_name: lAviila
 
@@ -84,8 +80,7 @@ name: Generate GitHub Contributions Snake Animations,
 
       # Step 3: Deploy the generated files to the 'output' branch
 
-      
-name: Deploy to Output Branch,
+      - name: Deploy to Output Branch
 
         uses: peaceiris/actions-gh-pages@v3
 
